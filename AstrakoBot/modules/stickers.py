@@ -39,6 +39,7 @@ def stickerid(update: Update, context: CallbackContext):
 
 def cb_sticker(update: Update, context: CallbackContext):
     msg = update.effective_message
+    stp = ""
     split = msg.text.split(" ", 1)
     if len(split) == 1:
         msg.reply_text("Provide some name to search for pack.")
