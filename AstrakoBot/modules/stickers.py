@@ -47,6 +47,7 @@ def cb_sticker(update: Update, context: CallbackContext):
     text = requests.get(combot_stickers_url + split[1]).text
     soup = bs(text, "lxml")
     results = soup.find_all("div", {"class": "sticker-pack__header"})
+    stp = f"Stickers for *{split[1]}*:"
     for pack in results:
         if pack.button:
             title_ = (pack.find("div", {"class": "sticker-pack__title"})).text
